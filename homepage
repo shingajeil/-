@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신가제일교회</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://placehold.co/1920x800/667eea/ffffff?text=%EC%9D%80%ED%98%9C%EC%99%80+%EC%82%AC%EB%9E%91%EC%9D%B4+%EB%84%9%EC%B9%98%EB%8A%94+%EA%B3%B5%EB%8F%99%EC%B2%B4');
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-700 flex items-center">
+                <img src="https://alpha.gapck.org/assets/client-gapck/img/bg/bg-logo-color.svg" alt="신가제일교회 로고" class="h-8 mr-2">
+                신가제일교회
+            </h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition">교회소개</a>
+                <a href="#worship" class="text-gray-600 hover:text-indigo-600 transition">예배안내</a>
+                <a href="#sermon" class="text-gray-600 hover:text-indigo-600 transition">주일말씀</a>
+                <a href="#news" class="text-gray-600 hover:text-indigo-600 transition">교회소식</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition">상담문의</a>
+                <a href="#location" class="text-gray-600 hover:text-indigo-600 transition">오시는길</a>
+            </nav>
+            <button class="md:hidden" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <a href="#about" class="block py-2 px-6 text-sm hover:bg-gray-100">교회소개</a>
+            <a href="#worship" class="block py-2 px-6 text-sm hover:bg-gray-100">예배안내</a>
+            <a href="#sermon" class="block py-2 px-6 text-sm hover:bg-gray-100">주일말씀</a>
+            <a href="#news" class="block py-2 px-6 text-sm hover:bg-gray-100">교회소식</a>
+            <a href="#contact" class="block py-2 px-6 text-sm hover:bg-gray-100">상담문의</a>
+            <a href="#location" class="block py-2 px-6 text-sm hover:bg-gray-100">오시는길</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section h-[60vh] bg-cover bg-center flex items-center justify-center text-white">
+            <div class="text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">하나님의 기쁨이 되는 교회</h2>
+                <p class="text-lg md:text-xl">신가제일교회에 오신 모든 분들을 주님의 이름으로 환영합니다.</p>
+            </div>
+        </section>
+
+        <!-- 교회소개 (About) -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl font-bold mb-4">환영합니다!</h3>
+                <p class="max-w-3xl mx-auto text-gray-600 mb-8">
+                    신가제일교회는 대한예수교장로회(합동) 교단에 소속된 교회로서,
+                    오직 말씀과 기도로 이 땅에 하나님의 나라를 세워가는 건강한 공동체입니다.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <img src="https://placehold.co/200x200/e2e8f0/333333?text=Photo" alt="담임목사 사진" class="w-40 h-40 rounded-full object-cover shadow-lg">
+                    <div>
+                        <h4 class="text-xl font-bold">김선홍 담임목사</h4>
+                        <p class="text-gray-500">"주님께서 맡기신 사명을 따라<br>성도님들을 사랑으로 섬기겠습니다."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 예배안내 (Worship) -->
+        <section id="worship" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold">예배 안내</h3>
+                    <p class="text-gray-600 mt-2">마음과 뜻을 다해 드리는 예배에 여러분을 초대합니다.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                    <!-- 주일예배 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-cross text-4xl text-indigo-500 mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">주일예배</h4>
+                        <p class="text-gray-600">1부: 오전 11:00</p>
+                        <p class="text-gray-600">2부: 오후 13:30</p>
+                    </div>
+                    <!-- 수요예배 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-book-bible text-4xl text-indigo-500 mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">수요예배</h4>
+                        <p class="text-gray-600">오후 7:00</p>
+                    </div>
+                    <!-- 새벽기도회 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-dove text-4xl text-indigo-500 mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">새벽기도회</h4>
+                        <p class="text-gray-600">월-금 오전 5:00</p>
+                    </div>
+                    <!-- 금요기도회 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-hand-praying text-4xl text-indigo-500 mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">금요기도회</h4>
+                        <p class="text-gray-600">금 오후 8:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 주일말씀 (Sermon) -->
+        <section id="sermon" class="py-20 bg-indigo-50">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold">주일 말씀</h3>
+                    <p class="text-gray-600 mt-2">생명의 말씀으로 한 주간도 승리하는 삶을 사시길 바랍니다.</p>
+                </div>
+                <div id="sermon-content" class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden md:flex">
+                    <div class="md:w-1/2 relative h-60 md:h-auto bg-gray-200 flex items-center justify-center">
+                        <iframe id="sermon-video" class="absolute top-0 left-0 w-full h-full" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p id="sermon-video-loading" class="text-gray-500">최신 영상을 불러오는 중입니다...</p>
+                    </div>
+                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                        <p class="text-sm text-indigo-600 font-semibold mb-1">최신 설교</p>
+                        <h4 id="sermon-title" class="text-2xl font-bold mb-2"> </h4>
+                        <p id="sermon-scripture" class="text-gray-500 mb-4"> </p>
+                        <p class="text-gray-700 font-semibold mb-6">김선홍 담임목사</p>
+                        <a href="#" id="sermon-youtube-link" target="_blank" class="self-start bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition">
+                            채널 바로가기 <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 교회소식 (News) -->
+        <section id="news" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold">교회 소식</h3>
+                    <p class="text-gray-600 mt-2">교회 내의 다양한 소식을 전해드립니다.</p>
+                </div>
+                <!-- 교회 소식 목록을 리스트에서 그리드(카드) 형태로 변경 -->
+                <div id="news-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 로딩 스피너 -->
+                    <div id="news-loading" class="col-span-1 md:col-span-2 lg:col-span-3 text-center text-gray-500 py-8">
+                        <i class="fas fa-spinner fa-spin text-3xl text-indigo-500"></i>
+                        <p class="mt-3 text-sm">교회 소식을 불러오고 있습니다...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 상담문의 (Contact) -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold">상담 문의</h3>
+                    <p class="text-gray-600 mt-2">신앙 생활이나 교회에 대해 궁금한 점이 있으시면 언제든지 문의해주세요.</p>
+                </div>
+                <div class="max-w-2xl mx-auto">
+                    <form action="https://formspree.io/f/movnobzk" method="POST" class="space-y-6 bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">이름</label>
+                            <div class="mt-1">
+                                <input type="text" name="name" id="name" placeholder="이름을 입력하세요" autocomplete="name" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">연락처</label>
+                            <div class="mt-1">
+                                <input type="tel" name="phone" id="phone" placeholder="연락처를 입력하세요" autocomplete="tel" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">이메일 (선택)</label>
+                            <div class="mt-1">
+                                <input type="email" name="_replyto" id="email" placeholder="이메일을 입력하세요" autocomplete="email" class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">문의 내용</label>
+                            <div class="mt-1">
+                                <textarea id="message" name="message" rows="4" placeholder="문의하실 내용을 자유롭게 작성해주세요." class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="inline-flex justify-center py-3 px-8 border border-transparent shadow-sm text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition">
+                                문의하기
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 오시는길 (Location) -->
+        <section id="location" class="py-20 bg-gray-100">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold">오시는 길</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.9224984234197!2d126.83380687622133!3d35.18348415715546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718ec4b0addc13%3A0xeebd472554d118a2!2z6rSR7KO86rSR7Jet7IucIOq0keyCsOq1rCDsiJjrk7HroZwyNTjrsojquLggMjAtMTA!5e0!3m2!1sko!2skr!4v1758251827634!5m2!1sko!2skr" class="w-full h-80 rounded-lg shadow-md" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="space-y-4">
+                        <p class="flex items-start">
+                            <i class="fa-solid fa-map-marker-alt text-2xl text-indigo-600 mr-4 mt-1"></i>
+                            <span>
+                                <strong class="block">주소</strong>
+                                광주광역시 광산구 수등로258번길 20-10
+                            </span>
+                        </p>
+                         <p class="flex items-start">
+                            <i class="fa-solid fa-phone text-2xl text-indigo-600 mr-4 mt-1"></i>
+                            <span>
+                                <strong class="block">연락처</strong>
+                                010-6245-9697
+                            </span>
+                        </p>
+                         <p class="flex items-start">
+                            <i class="fa-solid fa-bus text-2xl text-indigo-600 mr-4 mt-1"></i>
+                            <span>
+                                <strong class="block">대중교통</strong>
+                                일곡10, 첨단09, 마을720, 송정29
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-xl font-bold mb-2">신가제일교회</h2>
+            <p class="text-gray-400 text-sm">대한예수교장로회(합동)</p>
+            <p class="text-gray-400 text-sm mt-4">광주광역시 광산구 수등로258번길 20-10 | Tel: 010-6245-9697</p>
+            <p class="text-gray-500 text-xs mt-6">&copy; 2025 Singa Jeil Church. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- ⚙️ 사용자 설정 영역 ---
+        const GOOGLE_SHEET_ID = '2PACX-1vRgkyeKWzW6pphzZJAkhAkx6gf5n8tk3ZENdqS5HPjWVWRmRXEDV_RaAmLdq02OSPOnkEiNWvgG-881';
+        const YOUTUBE_API_KEY = 'AIzaSyDHalaC0-LOMr7owh-OJ7KFEMgzPalXkuo';
+        const YOUTUBE_CHANNEL_ID = 'UCrD5qnIM5fOiULuDVP8ObUw';
+        
+        // --- 설정 영역 끝 ---
+
+        // 모바일 메뉴 토글 스크립트
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadLatestSermon();
+            loadNews();
+        });
+
+        async function loadLatestSermon() {
+            const videoElement = document.getElementById('sermon-video');
+            const loadingElement = document.getElementById('sermon-video-loading');
+            const titleElement = document.getElementById('sermon-title');
+            const scriptureElement = document.getElementById('sermon-scripture');
+            const channelLink = document.getElementById('sermon-youtube-link');
+
+            channelLink.href = `https://www.youtube.com/channel/${YOUTUBE_CHANNEL_ID}`;
+
+            if (!YOUTUBE_API_KEY || !YOUTUBE_CHANNEL_ID) {
+                loadingElement.textContent = '유튜브 API 설정이 필요합니다.';
+                return;
+            }
+
+            try {
+                const channelUrl = `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=${YOUTUBE_CHANNEL_ID}&key=${YOUTUBE_API_KEY}`;
+                const channelResponse = await fetch(channelUrl);
+                const channelData = await channelResponse.json();
+                
+                if (channelData.error) { throw new Error('API 키 또는 채널 ID를 확인해주세요.'); }
+                if (!channelData.items || channelData.items.length === 0) { throw new Error('YouTube 채널을 찾을 수 없습니다.'); }
+                
+                const uploadsPlaylistId = channelData.items[0].contentDetails.relatedPlaylists.uploads;
+
+                const playlistUrl = `https://www.googleapis.com/youtube/v3/playlistItems?key=${YOUTUBE_API_KEY}&playlistId=${uploadsPlaylistId}&part=snippet&maxResults=1`;
+                const playlistResponse = await fetch(playlistUrl);
+                const playlistData = await playlistResponse.json();
+
+                if (playlistData.error) { throw new Error('재생목록을 찾는 중 오류가 발생했습니다.'); }
+
+                if (playlistData.items && playlistData.items.length > 0) {
+                    const latestVideo = playlistData.items[0].snippet;
+                    videoElement.src = `https://www.youtube.com/embed/${latestVideo.resourceId.videoId}`;
+                    titleElement.textContent = latestVideo.title;
+                    const scriptureMatch = latestVideo.description.match(/([가-힣]{1,4}\s*\d{1,3}:\d{1,3}(-\d{1,3})?)/);
+                    scriptureElement.textContent = scriptureMatch ? scriptureMatch[0] : '본문 내용은 영상 설명을 참고해주세요.';
+                    loadingElement.style.display = 'none';
+                } else {
+                    loadingElement.textContent = '채널에 영상이 없습니다.';
+                }
+            } catch (error) {
+                console.error('Error fetching latest sermon:', error);
+                loadingElement.textContent = error.message;
+            }
+        }
+
+        // 구글 시트에서 교회 소식을 불러오는 함수 (카드 디자인 적용)
+        async function loadNews() {
+            const newsList = document.getElementById('news-list');
+            const loadingElement = document.getElementById('news-loading');
+
+            if (!GOOGLE_SHEET_ID) {
+                loadingElement.innerHTML = '<p class="text-sm">구글 시트 설정이 필요합니다.</p>';
+                return;
+            }
+            
+            const url = `https://docs.google.com/spreadsheets/d/e/${GOOGLE_SHEET_ID}/pub?output=csv`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) { throw new Error(`Network response was not ok: ${response.statusText}`); }
+                
+                const csvText = await response.text();
+                const rows = csvText.trim().split('\n').slice(1);
+
+                loadingElement.style.display = 'none';
+                
+                const categoryColors = {
+                    '안내': 'bg-indigo-100 text-indigo-800',
+                    '모집': 'bg-green-100 text-green-800',
+                    '행사': 'bg-yellow-100 text-yellow-800',
+                    '기타': 'bg-gray-100 text-gray-800'
+                };
+
+                if (rows.length === 0 || (rows.length === 1 && rows[0].trim() === '')) {
+                    const noNewsItem = document.createElement('div');
+                    noNewsItem.className = 'col-span-1 md:col-span-2 lg:col-span-3 text-center text-gray-500 py-4';
+                    noNewsItem.textContent = '등록된 소식이 없습니다.';
+                    newsList.appendChild(noNewsItem);
+                    return;
+                }
+
+                rows.forEach(row => {
+                    if (row.trim() === '') return;
+                    
+                    // CSV 파싱: category, title, content, date
+                    const columns = row.split(',');
+                    const category = (columns[0] || '').trim() || '기타';
+                    const title = (columns[1] || '').trim() || '제목 없음';
+                    const content = (columns[2] || '').trim(); // 내용이 없을 수도 있으므로 기본값 없음
+                    const date = (columns[3] || '').trim() || '';
+                    
+                    const colorClasses = categoryColors[category] || categoryColors['기타'];
+
+                    const newsCard = document.createElement('div');
+                    newsCard.className = 'bg-white p-6 rounded-lg shadow-lg flex flex-col h-full transform hover:-translate-y-1 transition-transform duration-300';
+                    newsCard.innerHTML = `
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="${colorClasses} text-xs font-semibold px-2.5 py-1 rounded-full">${category}</span>
+                            <span class="text-xs text-gray-400 whitespace-nowrap">${date}</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">${title}</h4>
+                        <p class="text-gray-600 text-sm flex-grow">${content}</p>
+                    `;
+                    newsList.appendChild(newsCard);
+                });
+
+            } catch (error) {
+                console.error('Error fetching news:', error);
+                loadingElement.innerHTML = '<p class="text-sm">소식을 불러오는 데 실패했습니다. 구글 시트가 "웹에 게시" 되었는지, ID가 올바른지 확인해주세요.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
+
