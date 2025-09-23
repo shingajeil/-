@@ -16,9 +16,7 @@
         body {
             font-family: 'Noto Sans KR', sans-serif;
         }
-        .hero-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://placehold.co/1920x800/667eea/ffffff?text=%EC%9D%80%ED%98%9C%EC%99%80+%EC%82%AC%EB%9E%91%EC%9D%B4+%EB%84%9%EC%B9%98%EB%8A%94+%EA%B3%B%EB%8F%99%EC%B2%B4');
-        }
+        /* 기존 hero-section 스타일은 삭제하고 슬라이드쇼로 대체됩니다. */
         #privacy-policy-details {
             transition: all 0.3s ease-in-out;
         }
@@ -59,11 +57,25 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero-section h-[60vh] bg-cover bg-center flex items-center justify-center text-white">
-            <div class="text-center">
-                <h2 class="text-4xl md:text-6xl font-bold mb-4">하나님의 기쁨이 되는 교회</h2>
-                <p class="text-lg md:text-xl">신가제일교회에 오신 모든 분들을 주님의 이름으로 환영합니다.</p>
+        <!-- Hero Section Slideshow -->
+        <section id="hero-slideshow" class="relative h-[60vh] bg-black">
+            <!-- 슬라이드 이미지들 -->
+            <div class="hero-slide absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://imgur.com/OA70KSK');">
+            </div>
+            <div class="hero-slide absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://imgur.com/4gZXJdY');">
+            </div>
+            <div class="hero-slide absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://imgur.com/4gZXJdY');">
+            </div>
+            
+            <!-- 글씨 등 오버레이 컨텐츠 -->
+            <div class="absolute inset-0 flex items-center justify-center text-white z-10">
+                <div class="text-center">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4">하나님의 기쁨이 되는 교회</h2>
+                    <p class="text-lg md:text-xl">신가제일교회에 오신 모든 분들을 주님의 이름으로 환영합니다.</p>
+                </div>
             </div>
         </section>
 
@@ -285,6 +297,7 @@
             setupMobileMenu();
             setupLogoLink();
             setupPrivacyAgreement();
+            setupHeroSlideshow(); // 슬라이드쇼 기능 추가
             loadLatestSermon();
             loadNews();
         });
@@ -327,6 +340,24 @@
                     submitButton.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
                 }
             });
+        }
+
+        // Hero Section Slideshow
+        function setupHeroSlideshow() {
+            const slides = document.querySelectorAll('.hero-slide');
+            if (slides.length < 2) { // 슬라이드가 1개 이하일 경우 첫번째 슬라이드만 보이게 처리
+                if(slides.length === 1) slides[0].classList.remove('opacity-0');
+                return;
+            }
+
+            let currentSlide = 0;
+            slides[currentSlide].classList.remove('opacity-0'); // 첫번째 슬라이드 보이기
+
+            setInterval(() => {
+                slides[currentSlide].classList.add('opacity-0'); // 현재 슬라이드 숨기기
+                currentSlide = (currentSlide + 1) % slides.length; // 다음 슬라이드 인덱스 계산
+                slides[currentSlide].classList.remove('opacity-0'); // 다음 슬라이드 보이기
+            }, 5000); // 5초마다 변경
         }
 
         async function loadLatestSermon() {
@@ -456,5 +487,4 @@
     </script>
 </body>
 </html>
-
 
