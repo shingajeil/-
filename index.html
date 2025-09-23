@@ -4,35 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>신가제일교회</title>
+    <!-- Tailwind CSS: 홈페이지의 전체적인 디자인을 담당합니다. -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome: 예배안내 아이콘 등 예쁜 아이콘을 사용하게 해줍니다. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Fonts: 홈페이지의 글꼴(폰트)을 불러옵니다. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 이 홈페이지를 위한 추가 스타일(CSS)입니다. -->
     <style>
+        /* 페이지 내에서 부드럽게 스크롤 이동하도록 설정합니다. */
         html {
             scroll-behavior: smooth;
         }
+        /* 홈페이지 전체의 기본 글꼴을 설정합니다. */
         body {
             font-family: 'Noto Sans KR', sans-serif;
         }
-        /* 기존 hero-section 스타일은 삭제하고 슬라이드쇼로 대체됩니다. */
+        /* 상담문의 '자세히보기'가 부드럽게 나타나도록 설정합니다. */
         #privacy-policy-details {
             transition: all 0.3s ease-in-out;
+        }
+        /* 스크롤 시 섹션이 부드럽게 나타나는 애니메이션 효과입니다. */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* 카드 등에 마우스를 올렸을 때 나타나는 입체적인 효과입니다. */
+        .hover-effect {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        .hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header -->
+    <!-- ========== Header (상단 메뉴) ========== -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- 로고: 클릭하면 페이지 최상단으로 이동합니다. -->
             <a href="#" id="logo-link">
                 <h1 class="text-2xl font-bold text-gray-700 flex items-center">
                     <img src="https://alpha.gapck.org/assets/client-gapck/img/bg/bg-logo-color.svg" alt="신가제일교회 로고" class="h-8 mr-2">
                     신가제일교회
                 </h1>
             </a>
+            <!-- 네비게이션 메뉴 (컴퓨터 화면용) -->
             <nav class="hidden md:flex space-x-8">
                 <a href="#about" class="text-gray-600 hover:text-indigo-600 transition">교회소개</a>
                 <a href="#worship" class="text-gray-600 hover:text-indigo-600 transition">예배안내</a>
@@ -41,11 +67,12 @@
                 <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition">상담문의</a>
                 <a href="#location" class="text-gray-600 hover:text-indigo-600 transition">오시는길</a>
             </nav>
+            <!-- 모바일 메뉴 버튼 (작은 화면용) -->
             <button class="md:hidden" id="mobile-menu-button">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
-        <!-- Mobile Menu -->
+        <!-- 모바일 메뉴 (클릭 시 나타나는 메뉴) -->
         <div class="md:hidden hidden" id="mobile-menu">
             <a href="#about" class="block py-2 px-6 text-sm hover:bg-gray-100">교회소개</a>
             <a href="#worship" class="block py-2 px-6 text-sm hover:bg-gray-100">예배안내</a>
@@ -57,10 +84,15 @@
     </header>
 
     <main>
-        <!-- Hero Section Slideshow -->
+        <!-- ========== Hero Section (메인 화면 슬라이드쇼) ========== -->
         <section id="hero-slideshow" class="relative h-[60vh] md:h-auto md:aspect-[2.35/1] bg-black overflow-hidden">
-            <!-- 슬라이드 이미지들 -->
-            <!-- 중요: 반드시 .jpg .png 등으로 끝나는 'Direct Link'를 사용해야 합니다. -->
+            
+            <!-- ▼▼▼▼▼ 슬라이드 사진 변경/추가/삭제 ▼▼▼▼▼ -->
+            <!-- 
+                - 사진 변경: 아래 url('...') 부분에 Imgur 등에서 복사한 'Direct Link' 주소를 붙여넣으세요.
+                - 사진 추가: 아래 <div class="hero-slide" ...>...</div> 블록 하나를 통째로 복사해서 붙여넣고 주소를 바꾸세요.
+                - 사진 삭제: 필요 없는 <div class="hero-slide" ...>...</div> 블록 하나를 통째로 지우세요.
+            -->
             <div class="hero-slide absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0" 
                  style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.imgur.com/CfVZCgW.jpeg');">
             </div>
@@ -70,62 +102,64 @@
             <div class="hero-slide absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out opacity-0" 
                  style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.imgur.com/5xE5cFM.jpeg');">
             </div>
-            <!-- 글씨 등 오버레이 컨텐츠 -->
+            <!-- ▲▲▲▲▲ 슬라이드 사진 변경/추가/삭제 ▲▲▲▲▲ -->
+            
+            <!-- 슬라이드 위 글씨 (고정) -->
             <div class="absolute inset-0 flex items-center justify-center text-white z-10">
-                <div class="text-center">
+                <div class="text-center p-4">
                     <h2 class="text-4xl md:text-6xl font-bold mb-4">하나님의 기쁨이 되는 교회</h2>
                     <p class="text-lg md:text-xl">신가제일교회에 오신 모든 분들을 주님의 이름으로 환영합니다.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 교회소개 (About) -->
-        <section id="about" class="py-20 bg-white">
+        <!-- ========== 교회소개 (About) ========== -->
+        <section id="about" class="py-20 bg-white fade-in-section">
             <div class="container mx-auto px-6 text-center">
                 <h3 class="text-3xl font-bold mb-4">환영합니다!</h3>
-                <p class="max-w-3xl mx-auto text-gray-600 mb-8">
+                <!-- 교회 소개 문구: 이 부분을 수정하세요. -->
+                <p class="max-w-3xl mx-auto text-gray-600 mb-12 leading-relaxed">
                     신가제일교회는 대한예수교장로회(합동) 교단에 소속된 교회로서,
                     오직 말씀과 기도로 이 땅에 하나님의 나라를 세워가는 건강한 공동체입니다.
                 </p>
                 <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <!-- 담임목사 사진: src="..." 부분에 이미지 주소를 넣어주세요. -->
                     <img src="https://i.imgur.com/i4aYgIq.jpeg" alt="담임목사 사진" class="w-40 h-40 rounded-full object-cover shadow-lg">
                     <div>
+                        <!-- 담임목사 이름 및 인사말: 이 부분을 수정하세요. -->
                         <h4 class="text-xl font-bold">김선홍 담임목사</h4>
-                        <p class="text-gray-500">"주님께서 맡기신 사명을 따라<br>성도님들을 사랑으로 섬기겠습니다."</p>
+                        <p class="text-gray-500 mt-2">"주님께서 맡기신 사명을 따라<br>성도님들을 사랑으로 섬기겠습니다."</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 예배안내 (Worship) -->
-        <section id="worship" class="py-20">
+        <!-- ========== 예배안내 (Worship) ========== -->
+        <section id="worship" class="py-20 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h3 class="text-3xl font-bold">예배 안내</h3>
                     <p class="text-gray-600 mt-2">마음과 뜻을 다해 드리는 예배에 여러분을 초대합니다.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-                    <!-- 주일예배 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <!-- 예배 시간: 아래 텍스트를 수정하여 예배 시간을 변경할 수 있습니다. -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-effect">
                         <i class="fa-solid fa-cross text-4xl text-indigo-500 mb-4"></i>
                         <h4 class="text-xl font-bold mb-2">주일예배</h4>
                         <p class="text-gray-600">1부: 오전 11:00</p>
                         <p class="text-gray-600">2부: 오후 13:30</p>
                     </div>
-                    <!-- 수요예배 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-effect">
                         <i class="fa-solid fa-book-bible text-4xl text-indigo-500 mb-4"></i>
                         <h4 class="text-xl font-bold mb-2">수요예배</h4>
                         <p class="text-gray-600">오후 7:00</p>
                     </div>
-                    <!-- 새벽기도회 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-effect">
                         <i class="fa-solid fa-dove text-4xl text-indigo-500 mb-4"></i>
                         <h4 class="text-xl font-bold mb-2">새벽기도회</h4>
                         <p class="text-gray-600">월-금 오전 5:00</p>
                     </div>
-                    <!-- 금요기도회 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover-effect">
                         <i class="fa-solid fa-hands-praying text-4xl text-indigo-500 mb-4"></i>
                         <h4 class="text-xl font-bold mb-2">금요기도회</h4>
                         <p class="text-gray-600">금 오후 8:00</p>
@@ -134,8 +168,9 @@
             </div>
         </section>
         
-        <!-- 주일말씀 (Sermon) -->
-        <section id="sermon" class="py-20 bg-indigo-50">
+        <!-- ========== 주일말씀 (Sermon) ========== -->
+        <!-- 이 섹션은 유튜브 채널에 영상을 올리면 자동으로 최신 영상으로 업데이트됩니다. (수정 필요 없음) -->
+        <section id="sermon" class="py-20 bg-indigo-50 fade-in-section">
             <div class="container mx-auto px-6">
                  <div class="text-center mb-12">
                     <h3 class="text-3xl font-bold">주일 말씀</h3>
@@ -151,7 +186,7 @@
                         <h4 id="sermon-title" class="text-2xl font-bold mb-2"> </h4>
                         <p id="sermon-scripture" class="text-gray-500 mb-4"> </p>
                         <p class="text-gray-700 font-semibold mb-6">김선홍 담임목사</p>
-                        <a href="#" id="sermon-youtube-link" target="_blank" class="self-start bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition">
+                        <a href="#" id="sermon-youtube-link" target="_blank" class="self-start bg-indigo-600 text-white px-6 py-2 rounded-full transition-all duration-300 hover:bg-indigo-700 transform hover:scale-105">
                             채널 바로가기 <i class="fa-solid fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -159,15 +194,16 @@
             </div>
         </section>
 
-        <!-- 교회소식 (News) -->
-        <section id="news" class="py-20">
+        <!-- ========== 교회소식 (News) ========== -->
+        <!-- 이 섹션은 연결된 구글 시트 내용을 수정하면 자동으로 업데이트됩니다. (수정 필요 없음) -->
+        <section id="news" class="py-20 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h3 class="text-3xl font-bold">교회 소식</h3>
                     <p class="text-gray-600 mt-2">교회 내의 다양한 소식을 전해드립니다.</p>
                 </div>
                 <div id="news-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div id="news-loading" class="col-span-1 md:col-span-2 lg:grid-cols-3 text-center text-gray-500 py-8">
+                    <div id="news-loading" class="col-span-1 md:col-span-2 lg:col-span-3 text-center text-gray-500 py-8">
                         <i class="fas fa-spinner fa-spin text-3xl text-indigo-500"></i>
                         <p class="mt-3 text-sm">교회 소식을 불러오고 있습니다...</p>
                     </div>
@@ -175,15 +211,17 @@
             </div>
         </section>
 
-        <!-- 상담문의 (Contact) -->
-        <section id="contact" class="py-20 bg-white">
+        <!-- ========== 상담문의 (Contact) ========== -->
+        <section id="contact" class="py-20 bg-white fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h3 class="text-3xl font-bold">상담 문의</h3>
                     <p class="text-gray-600 mt-2">신앙 생활이나 교회에 대해 궁금한 점이 있으시면 언제든지 문의해주세요.</p>
                 </div>
                 <div class="max-w-2xl mx-auto">
+                    <!-- Formspree: action="..." 부분에 Formspree에서 제공하는 주소를 넣으면, 문의 내용이 해당 이메일로 전송됩니다. -->
                     <form action="https://formspree.io/f/movnobzk" method="POST" class="space-y-6 bg-gray-50 p-8 rounded-lg shadow-md">
+                        <!-- 입력 필드들 -->
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700">이름</label>
                             <div class="mt-1">
@@ -208,8 +246,7 @@
                                 <textarea id="message" name="message" rows="4" placeholder="문의하실 내용을 자유롭게 작성해주세요." class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
                             </div>
                         </div>
-
-                        <!-- 개인정보 수집 동의 -->
+                        <!-- 개인정보 수집 동의 체크박스 -->
                         <div class="space-y-4">
                             <div class="flex items-center space-x-2">
                                 <input type="checkbox" id="privacy-agreement" name="privacy-agreement" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
@@ -225,7 +262,7 @@
                                 <p><strong>4. 동의 거부 권리 안내:</strong> 귀하는 개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있습니다. 다만, 동의를 거부할 경우 상담 신청이 제한될 수 있습니다.</p>
                             </div>
                         </div>
-
+                        <!-- 제출 버튼 -->
                         <div class="text-center">
                             <button type="submit" id="submit-button" class="inline-flex justify-center py-3 px-8 border border-transparent shadow-sm text-base font-medium rounded-full text-white bg-gray-400 cursor-not-allowed transition" disabled>
                                 문의하기
@@ -236,16 +273,18 @@
             </div>
         </section>
 
-        <!-- 오시는길 (Location) -->
-        <section id="location" class="py-20 bg-gray-100">
+        <!-- ========== 오시는길 (Location) ========== -->
+        <section id="location" class="py-20 bg-gray-100 fade-in-section">
              <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h3 class="text-3xl font-bold">오시는 길</h3>
                 </div>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- 구글 지도: src="..." 부분의 링크를 교체하면 지도 위치를 바꿀 수 있습니다. -->
                     <div>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.9224984234197!2d126.83380687622133!3d35.18348415715546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718ec4b0addc13%3A0xeebd472554d118a2!2z6rSR7KO86rSR7Jet7IucIOq0keyCsOq1rCDsiJjrk7HroZwyNTjrsojquLggMjAtMTA!5e0!3m2!1sko!2skr!4v1758251827634!5m2!1sko!2skr" class="w-full h-80 rounded-lg shadow-md" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                    <!-- 교회 주소 및 연락처 정보: 이 부분을 수정하세요. -->
                     <div class="space-y-4">
                         <p class="flex items-start">
                             <i class="fa-solid fa-map-marker-alt text-2xl text-indigo-600 mr-4 mt-1"></i>
@@ -274,56 +313,78 @@
         </section>
     </main>
 
-    <!-- KakaoTalk Channel Floating Button -->
+    <!-- ========== KakaoTalk 채널 바로가기 버튼 ========== -->
+    <!-- href="..." 부분에 교회의 카카오톡 채널 URL을 입력하세요. -->
     <a href="여기에_카카오톡_채널_URL을_입력하세요" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#FEE500] w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300" aria-label="카카오톡 채널로 상담하기">
         <i class="fa-solid fa-comment text-3xl text-black opacity-90"></i>
     </a>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-10">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-xl font-bold mb-2">신가제일교회</h2>
-            <p class="text-gray-400 text-sm">대한예수교장로회(합동)</p>
-            <p class="text-gray-400 text-sm mt-4">광주광역시 광산구 수등로258번길 20-10 | Tel: 062-956-9125</p>
-            <p class="text-gray-500 text-xs mt-6">&copy; 2025 Singa Jeil Church. All Rights Reserved.</p>
+    <!-- ========== Footer (홈페이지 하단 정보) ========== -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-1">신가제일교회</h2>
+                    <p class="text-gray-400 text-sm">대한예수교장로회(합동)</p>
+                </div>
+                <!-- 하단 주소 및 연락처: 이 부분을 수정하세요. -->
+                <div class="mt-6 md:mt-0 space-y-1">
+                    <p>광주광역시 광산구 수등로258번길 20-10</p>
+                    <p>Tel: 062-956-9125</p>
+                </div>
+            </div>
+            <div class="mt-10 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2025 Singa Jeil Church. All Rights Reserved.
+            </div>
         </div>
     </footer>
 
+    <!-- ========== JavaScript (홈페이지 기능 담당) ========== -->
     <script>
         // --- ⚙️ 사용자 설정 영역 ---
+        // 이 부분의 ID와 KEY 값을 정확히 입력해야 자동 기능들이 작동합니다.
+        
+        // 1. 구글 시트 ID (교회 소식용)
         const GOOGLE_SHEET_ID = '2PACX-1vRgkyeKWzW6pphzZJAkhAkx6gf5n8tk3ZENdqS5HPjWVWRmRXEDV_RaAmLdq02OSPOnkEiNWvgG-881';
+
+        // 2. 유튜브 API 키 (최신 설교 영상용)
         const YOUTUBE_API_KEY = 'AIzaSyDHalaC0-LOMr7owh-OJ7KFEMgzPalXkuo';
+
+        // 3. 유튜브 채널 ID (최신 설교 영상용)
         const YOUTUBE_CHANNEL_ID = 'UCrD5qnIM5fOiULuDVP8ObUw';
         
         // --- 설정 영역 끝 ---
 
-        // --- 페이지 로드 시 실행 ---
+
+        // --- 페이지가 완전히 로드되면 아래 모든 기능들을 실행합니다. ---
         document.addEventListener('DOMContentLoaded', () => {
             setupMobileMenu();
             setupLogoLink();
             setupPrivacyAgreement();
-            setupHeroSlideshow(); // 슬라이드쇼 기능 추가
+            setupHeroSlideshow();
+            setupScrollAnimations(); // 스크롤 애니메이션 기능 실행
             loadLatestSermon();
             loadNews();
         });
 
         // --- 기능별 함수 ---
+
+        // 모바일 메뉴 버튼 기능
         function setupMobileMenu() {
             document.getElementById('mobile-menu-button').addEventListener('click', () => {
                 document.getElementById('mobile-menu').classList.toggle('hidden');
             });
         }
 
+        // 로고 클릭 시 최상단으로 이동하는 기능
         function setupLogoLink() {
             document.getElementById('logo-link').addEventListener('click', (event) => {
                 event.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
         
+        // 개인정보 동의 체크박스 기능
         function setupPrivacyAgreement() {
             const privacyAgreementCheckbox = document.getElementById('privacy-agreement');
             const privacyDetailsToggle = document.getElementById('privacy-details-toggle');
@@ -347,24 +408,39 @@
             });
         }
 
-        // Hero Section Slideshow
+        // 메인 화면 슬라이드쇼 기능
         function setupHeroSlideshow() {
             const slides = document.querySelectorAll('.hero-slide');
-            if (slides.length < 2) { // 슬라이드가 1개 이하일 경우 첫번째 슬라이드만 보이게 처리
+            if (slides.length < 2) {
                 if(slides.length === 1) slides[0].classList.remove('opacity-0');
                 return;
             }
-
             let currentSlide = 0;
-            slides[currentSlide].classList.remove('opacity-0'); // 첫번째 슬라이드 보이기
-
+            slides[currentSlide].classList.remove('opacity-0');
             setInterval(() => {
-                slides[currentSlide].classList.add('opacity-0'); // 현재 슬라이드 숨기기
-                currentSlide = (currentSlide + 1) % slides.length; // 다음 슬라이드 인덱스 계산
-                slides[currentSlide].classList.remove('opacity-0'); // 다음 슬라이드 보이기
-            }, 5000); // 5초마다 변경
+                slides[currentSlide].classList.add('opacity-0');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.remove('opacity-0');
+            }, 5000);
         }
 
+        // 스크롤 애니메이션 기능
+        function setupScrollAnimations() {
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // 최신 유튜브 설교 영상을 불러오는 기능
         async function loadLatestSermon() {
             const videoElement = document.getElementById('sermon-video');
             const loadingElement = document.getElementById('sermon-video-loading');
@@ -393,7 +469,8 @@
 
                 if (playlistData.items && playlistData.items.length > 0) {
                     const latestVideo = playlistData.items[0].snippet;
-                    videoElement.src = `https://www.youtube.com/embed/${latestVideo.resourceId.videoId}`;
+                    // 유튜브 링크에 rel=0 파라미터를 추가하여 관련 동영상이 다른 채널에서 표시되는 것을 방지합니다.
+                    videoElement.src = `https://www.youtube.com/embed/${latestVideo.resourceId.videoId}?rel=0`;
                     titleElement.textContent = latestVideo.title;
                     const scriptureMatch = latestVideo.description.match(/([가-힣]{1,4}\s*\d{1,3}:\d{1,3}(-\d{1,3})?)/);
                     scriptureElement.textContent = scriptureMatch ? scriptureMatch[0] : '본문 내용은 영상 설명을 참고해주세요.';
@@ -403,10 +480,11 @@
                 }
             } catch (error) {
                 console.error('Error fetching latest sermon:', error);
-                loadingElement.textContent = error.message;
+                loadingElement.textContent = `오류: ${error.message}`;
             }
         }
         
+        // 구글 시트의 CSV 데이터를 안전하게 파싱하는 기능
         function parseCsvRow(text) {
             const result = [];
             let current = '';
@@ -431,6 +509,7 @@
             return result;
         }
 
+        // 구글 시트에서 교회 소식을 불러오는 기능
         async function loadNews() {
             const newsList = document.getElementById('news-list');
             const loadingElement = document.getElementById('news-loading');
@@ -473,7 +552,7 @@
                     const date = (columns[3] || '').trim() || '';
                     const colorClasses = categoryColors[category] || categoryColors['기타'];
                     const newsCard = document.createElement('div');
-                    newsCard.className = 'bg-white p-6 rounded-lg shadow-lg flex flex-col h-full transform hover:-translate-y-1 transition-transform duration-300';
+                    newsCard.className = 'bg-white p-6 rounded-lg shadow-lg flex flex-col h-full hover-effect';
                     newsCard.innerHTML = `
                         <div class="flex justify-between items-start mb-3">
                             <span class="${colorClasses} text-xs font-semibold px-2.5 py-1 rounded-full">${category}</span>
